@@ -1,0 +1,12 @@
+Use
+---
+
+$ make
+$ ln -s libround.so.0.0 libround.so
+$ ln -s libround.so.0.0 libround.so.0
+
+There is a test program, libroundtest
+
+$ make libroundtest
+$ LD_LIBRARY_PATH=. ./libroundtest <number> <decimal places>
+
