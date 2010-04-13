@@ -14,8 +14,12 @@ int main(int argc, char **argv)
         rf = get_rounding_factor(atoi(argv[2]));
 
         printf("Rounding factor  : %f\n", rf);
+	printf("ceil             : %f --> %f\n", atof(argv[1]),
+						ceil(atof(argv[1]) * rf) / rf);
         printf("ceil0            : %f --> %f\n", atof(argv[1]),
                                                 ceil0(atof(argv[1]), rf));
+	printf("floor            : %f --> %f\n", atof(argv[1]),
+						floor(atof(argv[1]) * rf) / rf);
         printf("floor0           : %f --> %f\n", atof(argv[1]),
                                                 floor0(atof(argv[1]), rf));
         printf("round            : %f --> %f\n", atof(argv[1]),
