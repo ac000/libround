@@ -29,7 +29,7 @@ double get_rounding_factor(int dp)
 }
 
 /* 
- * Check if a fraction is a half, even though it sometimes it 
+ * Check if a fraction is a half, even though if sometimes it
  * should be, it isn't stored as that, e.g it may actually be 
  * 0.5000001. Multiplying then dividing by 10 seems to clear 
  * that up.
