@@ -130,7 +130,9 @@ double round_half_down0(double value, double rf)
 		return result;
 }
 
-/* Bankers rounding */
+/*
+ * Round half to even, aka, Bankers rounding
+ */
 double round_half_even(double value, double rf)
 {
 	double tmp;
