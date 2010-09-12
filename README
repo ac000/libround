@@ -10,3 +10,32 @@ There is a test program, libroundtest
 $ make libroundtest
 $ LD_LIBRARY_PATH=. ./libroundtest <number> <decimal places>
 
+
+Examples
+--------
+
+$ LD_LIBRARY_PATH=. ./libroundtest 9.015 2
+Rounding factor  : 100.000000
+ceil             : 9.015000 --> 9.020000
+ceil0            : 9.015000 --> 9.020000
+floor            : 9.015000 --> 9.010000
+floor0           : 9.015000 --> 9.010000
+round            : 9.015000 --> 9.020000
+round_half_up    : 9.015000 --> 9.020000
+round_half_up0   : 9.015000 --> 9.020000
+round_half_down  : 9.015000 --> 9.010000
+round_half_down0 : 9.015000 --> 9.010000
+round_half_even  : 9.015000 --> 9.020000
+
+$ LD_LIBRARY_PATH=. ./libroundtest -9.015 2
+Rounding factor  : 100.000000
+ceil             : -9.015000 --> -9.010000
+ceil0            : -9.015000 --> -9.020000
+floor            : -9.015000 --> -9.020000
+floor0           : -9.015000 --> -9.010000
+round            : -9.015000 --> -9.020000
+round_half_up    : -9.015000 --> -9.010000
+round_half_up0   : -9.015000 --> -9.020000
+round_half_down  : -9.015000 --> -9.020000
+round_half_down0 : -9.015000 --> -9.010000
+round_half_even  : -9.015000 --> -9.020000
