@@ -1,9 +1,11 @@
 Use
 ---
 
+To test without installing.
+
 $ make
-$ ln -s libround.so.0.0 libround.so
-$ ln -s libround.so.0.0 libround.so.0
+$ ln -s libround.so.0.0.0 libround.so
+$ ln -s libround.so.0.0.0 libround.so.0
 
 There is a test program, libroundtest
 
