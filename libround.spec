@@ -1,6 +1,6 @@
 Name:		libround		
 Version:	0.0.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Library of various numerical rounding functions
 
 Group:		System Environment/Libraries
@@ -25,6 +25,7 @@ make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -Dp -m644 libround.h $RPM_BUILD_ROOT/%{_includedir}/libround.h
 install -Dp -m0755 libround.so.%{version} $RPM_BUILD_ROOT/%{_libdir}/libround.so.%{version}
 cd $RPM_BUILD_ROOT/%{_libdir}
 ln -s libround.so.%{version} libround.so
@@ -40,9 +41,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc README COPYING
 %{_libdir}/libround.*
+%{_includedir}/libround.h
 
 
 %changelog
+* Sun Sep 26 2010 Andrew Clayton <andrew@digital-domain.net> - 0.0.0-2
+- Install libround.h
+
 * Sat Sep 25 2010 Andrew Clayton <andrew@digital-domain.net> - 0.0.0-1
 - Initial version.
 
