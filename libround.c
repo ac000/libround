@@ -18,8 +18,8 @@
  *
  * e.g given we want 9.4650 to 2 decimal places, this fucntion will return
  * 100.00 which when multipied with 9.4650 gives 946.50, letting us easily 
- * apply one the rounding algorithms on it. We then divide that number by the
- * rounding factor again to get our final answer.
+ * apply one of the rounding algorithms on it. We then divide that number by
+ * the rounding factor again to get our final answer.
  */
 double get_rounding_factor(int dp)
 {
