@@ -1,6 +1,6 @@
 Name:		libround		
-Version:	0.0.0
-Release:	2%{?dist}
+Version:	0.0.1
+Release:	1%{?dist}
 Summary:	Library of various numerical rounding functions
 
 Group:		System Environment/Libraries
@@ -45,6 +45,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Mar 22 2012 Andrew Clayton <andrew@digital-domain.net> - 0.0.1-1
+- Unexport a function
+- Bump version
+
 * Sun Sep 26 2010 Andrew Clayton <andrew@digital-domain.net> - 0.0.0-2
 - Install libround.h
 
