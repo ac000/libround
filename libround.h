@@ -11,7 +11,6 @@
 #define _LIBROUND_H_
 
 double get_rounding_factor(int dp);
-int is_fraction_a_half(double value, double rf);
 double ceil0(double value, double rf);
 double floor0(double value, double rf);
 double round_half_up(double value, double rf);
