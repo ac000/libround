@@ -1,7 +1,7 @@
 /*
  * libround.c - Rounding algorithms
  *
- * Copyright (C) 2010      Andrew Clayton <andrew@digital-domain.net>
+ * Copyright (C) 2010,2012	Andrew Clayton <andrew@digital-domain.net>
  * Inspired by rounding-algorithms.hpp in the Boost C++ library.
  * Released under the GNU Lesser General Public License (LGPL) version 2.1
  * See COPYING
