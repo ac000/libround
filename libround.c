@@ -8,25 +8,7 @@
  */
 
 #include <math.h>
-
-#include "libround.h"
-
-/* 
- * Given a number of decimal places (dp), return 10.0 to the power dp 
- * This is used to easily get at the remaining fraction part of the 
- * number beyound the decimal places we actually want.
- *
- * e.g given we want 9.4650 to 2 decimal places, this fucntion will return
- * 100.00 which when multipied with 9.4650 gives 946.50, letting us easily 
- * apply one of the rounding algorithms on it. We then divide that number by
- * the rounding factor again to get our final answer.
- */
-double get_rounding_factor(int dp)
-{
-	double rounding_factor = 10.0;
-	
-	return rounding_factor = pow(rounding_factor, (double)dp);
-}
+#include <stdbool.h>
 
 /* 
  * Check if a fraction is a half, even though if sometimes it
@@ -36,7 +18,7 @@ double get_rounding_factor(int dp)
  * Return 0 if not 0.5
  * Return 1 if 0.5
  */
-int is_fraction_a_half(double value, double rf)
+static bool is_fraction_a_half(double value, double rf)
 {
 	double frac;
 	double integral;
@@ -47,13 +29,30 @@ int is_fraction_a_half(double value, double rf)
 	 * This should ensure that frac ends up exactly as 0.[0-9]
 	 */
 	if (round(frac * 10) / 10 != 0.5 && round(frac * 10) / 10 != -0.5)
-		return 0;
+		return false;
 	else
-		return 1;
+		return true;
+}
+
+/*
+ * Given a number of decimal places (dp), return 10.0 to the power dp
+ * This is used to easily get at the remaining fraction part of the
+ * number beyond the decimal places we actually want.
+ *
+ * e.g given we want 9.4650 to 2 decimal places, this function will return
+ * 100.00 which when multipied with 9.4650 gives 946.50, letting us easily
+ * apply one of the rounding algorithms on it. We then divide that number by
+ * the rounding factor again to get our final answer.
+ */
+double lr_get_rounding_factor(int dp)
+{
+	double rounding_factor = 10.0;
+
+	return rounding_factor = pow(rounding_factor, (double)dp);
 }
 
 /* Round up, away from 0 */
-double ceil0(double value, double rf)
+double lr_ceil0(double value, double rf)
 {
 	double result;
 
@@ -65,7 +64,7 @@ double ceil0(double value, double rf)
 }
 
 /* Round down, towards 0 */
-double floor0(double value, double rf)
+double lr_floor0(double value, double rf)
 {
 	double result;
 
@@ -76,7 +75,7 @@ double floor0(double value, double rf)
 		return result;
 }
 
-double round_half_up(double value, double rf)
+double lr_round_half_up(double value, double rf)
 {
 	value *= rf;
 	/*
@@ -92,18 +91,18 @@ double round_half_up(double value, double rf)
 }
 
 /* Round away from 0 */
-double round_half_up0(double value, double rf)
+double lr_round_half_up0(double value, double rf)
 {
 	double result;
 
-	result = round_half_up(fabs(value), rf);
+	result = lr_round_half_up(fabs(value), rf);
 	if (value < 0.0)
 		return -result;
 	else
 		return result;
 }
 
-double round_half_down(double value, double rf)
+double lr_round_half_down(double value, double rf)
 {
 	value *= rf;
 	/*
@@ -119,11 +118,11 @@ double round_half_down(double value, double rf)
 }
 
 /* Round towards 0 */
-double round_half_down0(double value, double rf)
+double lr_round_half_down0(double value, double rf)
 {
 	double result;
 
-	result = round_half_down(fabs(value), rf);
+	result = lr_round_half_down(fabs(value), rf);
 	if (value < 0.0)
 		return -result;
 	else
@@ -133,7 +132,7 @@ double round_half_down0(double value, double rf)
 /*
  * Round half to even, aka, Bankers rounding
  */
-double round_half_even(double value, double rf)
+double lr_round_half_even(double value, double rf)
 {
 	double tmp;
 

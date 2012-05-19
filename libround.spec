@@ -1,5 +1,5 @@
 Name:		libround		
-Version:	0.0.1
+Version:	1.0.0
 Release:	1%{?dist}
 Summary:	Library of various numerical rounding functions
 
@@ -44,7 +44,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libround.h
 
 
+%postun
+rm %{_libdir}/libround.so.1
+
 %changelog
+* Sat May 19 2012 Andrew Clayton <andrew@digital-domain.net> - 1.0.0-1
+- New major version for API breakge.
+
 * Thu Mar 22 2012 Andrew Clayton <andrew@digital-domain.net> - 0.0.1-1
 - Unexport a function
 - Bump version
