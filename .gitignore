@@ -1,0 +1,4 @@
+*.swp
+*.o
+libround.so.1.0.0
+libroundtest
