@@ -4,8 +4,8 @@ Use
 To test without installing.
 
 $ make
-$ ln -s libround.so.1.0.1 libround.so
-$ ln -s libround.so.1.0.1 libround.so.1
+$ ln -s libround.so.1.0.2 libround.so
+$ ln -s libround.so.1.0.2 libround.so.1
 
 There is a test program, libroundtest
 
