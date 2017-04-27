@@ -5,7 +5,7 @@ Summary:	Library of various numerical rounding functions
 
 Group:		System Environment/Libraries
 License:	LGPLv2.1
-URL:		http://github.com/ac000/libround
+URL:		https://github.com/ac000/libround
 Source0:	libround-%{version}.tar
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
