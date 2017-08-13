@@ -1,4 +1,4 @@
-VERSION = 1.0.2
+VERSION = 1.0.3
 
 CC	= gcc
 CFLAGS	= -Wall -Wextra -pedantic -std=c99 -g -O2 -fvisibility=hidden -fPIC
