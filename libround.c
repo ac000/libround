@@ -18,7 +18,7 @@
  * Return 0 if not 0.5
  * Return 1 if 0.5
  */
-static bool is_fraction_a_half(double value, double rf)
+static bool is_fraction_a_half(double value)
 {
 	double frac;
 	double integral;
@@ -82,7 +82,7 @@ double lr_round_half_up(double value, double rf)
 	 * Some extra work needed to check for a half fraction.  
 	 * 9.495 to 2dp shows this problem.
 	 */ 	
-	if (!is_fraction_a_half(value, rf))
+	if (!is_fraction_a_half(value))
 		return round(value) / rf;
 	
 	value = ceil(value) / rf;
@@ -109,7 +109,7 @@ double lr_round_half_down(double value, double rf)
 	 * Some extra work needed to check for a half fraction. 
 	 * 9.095 to 2dp shows this problem.
 	 */
-	if (!is_fraction_a_half(value, rf))
+	if (!is_fraction_a_half(value))
 		return round(value) / rf;
 
 	value = floor(value) / rf;
@@ -137,7 +137,7 @@ double lr_round_half_even(double value, double rf)
 	double tmp;
 
 	value *= rf;
-	if (!is_fraction_a_half(value, rf))
+	if (!is_fraction_a_half(value))
 		return round(value) / rf;
 
 	tmp = floor(value);
