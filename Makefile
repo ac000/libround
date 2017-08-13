@@ -1,7 +1,7 @@
 VERSION = 1.0.2
 
 CC	= gcc
-CFLAGS	= -Wall -Wextra -pedantic -std=c99 -g -O2 -fPIC
+CFLAGS	= -Wall -Wextra -pedantic -std=c99 -g -O2 -fvisibility=hidden -fPIC
 LDFLAGS	= -shared -Wl,-z,now
 LIBS	= -lm
 
