@@ -41,3 +41,9 @@ round_half_up0   : -9.015000 --> -9.020000
 round_half_down  : -9.015000 --> -9.020000
 round_half_down0 : -9.015000 --> -9.010000
 round_half_even  : -9.015000 --> -9.020000
+
+
+License
+-------
+
+Licensed under the GNU Lesser General Public License version 2.1. See LGPL-2.1

@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: LGPL-2.1 */
+
 /*
  * libround.c - Rounding algorithms
  *
@@ -5,9 +7,6 @@
  * 					<andrew@digital-domain.net>
  *
  * Inspired by rounding-algorithms.hpp in the Boost C++ library.
- *
- * Released under the GNU Lesser General Public License (LGPL) version 2.1
- * See COPYING
  */
 
 #include <math.h>

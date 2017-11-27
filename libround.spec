@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc README COPYING
+%doc README LGPL-2.1
 %{_libdir}/libround.*
 %{_includedir}/libround.h
 
