@@ -34,8 +34,8 @@ static bool is_fraction_a_half(double value)
 	 */
 	if (round(frac * 10) / 10 != 0.5 && round(frac * 10) / 10 != -0.5)
 		return false;
-	else
-		return true;
+
+	return true;
 }
 
 /*
@@ -63,8 +63,8 @@ double lr_ceil0(double value, double rf)
 	result = ceil(fabs(value * rf)) / rf;
 	if (value < 0.0)
 		return -result;
-	else
-		return result;
+
+	return result;
 }
 
 /* Round down, towards 0 */
@@ -75,8 +75,8 @@ double lr_floor0(double value, double rf)
 	result = floor(fabs(value * rf)) / rf;
 	if (value < 0.0)
 		return -result;
-	else
-		return result;
+
+	return result;
 }
 
 double lr_round_half_up(double value, double rf)
@@ -102,8 +102,8 @@ double lr_round_half_up0(double value, double rf)
 	result = lr_round_half_up(fabs(value), rf);
 	if (value < 0.0)
 		return -result;
-	else
-		return result;
+
+	return result;
 }
 
 double lr_round_half_down(double value, double rf)
@@ -129,8 +129,8 @@ double lr_round_half_down0(double value, double rf)
 	result = lr_round_half_down(fabs(value), rf);
 	if (value < 0.0)
 		return -result;
-	else
-		return result;
+
+	return result;
 }
 
 /*
@@ -147,6 +147,6 @@ double lr_round_half_even(double value, double rf)
 	tmp = floor(value);
 	if ((int)tmp & 1)
 		return (tmp + 1) / rf;
-	else
-		return tmp / rf;
+
+	return tmp / rf;
 }
