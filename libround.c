@@ -3,8 +3,8 @@
 /*
  * libround.c - Rounding algorithms
  *
- * Copyright (C) 2010, 2012, 2017	Andrew Clayton
- * 					<andrew@digital-domain.net>
+ * Copyright (C) 2010, 2012, 2017, 2020		Andrew Clayton
+ *						<andrew@digital-domain.net>
  *
  * Inspired by rounding-algorithms.hpp in the Boost C++ library.
  */
@@ -145,8 +145,8 @@ double lr_round_half_even(double value, double rf)
 		return round(value) / rf;
 
 	tmp = floor(value);
-	if ((int)tmp % 2 == 0)
-		return tmp / rf;
-	else		
+	if ((int)tmp & 1)
 		return (tmp + 1) / rf;
+	else
+		return tmp / rf;
 }
