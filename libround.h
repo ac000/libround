@@ -3,7 +3,7 @@
 /*
  * libround.h - Rounding algorithms API
  *
- * Copyright (C) 	2010, 2012, 2017
+ * Copyright (C) 	2010, 2012, 2017, 2020
  * 			Andrew Clayton <andrew@digital-domain.net>
  *
  * Inspired by rounding-algorithms.hpp in the Boost C++ library.
@@ -17,14 +17,14 @@ extern "C" {
 #endif
 
 #pragma GCC visibility push(default)
-double lr_get_rounding_factor(int dp);
-double lr_ceil0(double value, double rf);
-double lr_floor0(double value, double rf);
-double lr_round_half_up(double value, double rf);
-double lr_round_half_up0(double value, double rf);
-double lr_round_half_down(double value, double rf);
-double lr_round_half_down0(double value, double rf);
-double lr_round_half_even(double value, double rf);
+extern double lr_get_rounding_factor(int dp);
+extern double lr_ceil0(double value, double rf);
+extern double lr_floor0(double value, double rf);
+extern double lr_round_half_up(double value, double rf);
+extern double lr_round_half_up0(double value, double rf);
+extern double lr_round_half_down(double value, double rf);
+extern double lr_round_half_down0(double value, double rf);
+extern double lr_round_half_even(double value, double rf);
 #pragma GCC visibility pop
 
 #ifdef __cplusplus
