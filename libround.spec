@@ -1,5 +1,5 @@
 Name:		libround		
-Version:	1.0.3
+Version:	1.0.4
 Release:	1%{?dist}
 Summary:	Library of various numerical rounding functions
 
@@ -45,6 +45,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+
+* Wed Jan 12 2021 Andrew Clayton <andrew@digital-domain.net> - 1.0.4-1
+- Minor cleanups
 
 * Sun Aug 13 2017 Andrew Clayton <andrew@digital-domain.net> - 1.0.3-1
 - Various cleanups
